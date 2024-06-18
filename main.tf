@@ -10,13 +10,15 @@ resource "aws_rds_cluster_parameter_group" "cluster_pg" {
   description = var.pg_info["description"] == "" ? "${var.pg_info["name"]} Cluster PG" : var.pg_info["description"]
 
   dynamic "parameter" {
-    for_each = local.cluster_pg_parameters
+    for_each = var.cluster_pg_parameters
     content {
       name         = parameter.value["name"]
       value        = parameter.value["value"]
       apply_method = parameter.value["apply_method"]
     }
   }
+
+  tags = local.tags
 }
 
 
@@ -35,6 +37,8 @@ resource "aws_db_parameter_group" "instance_pg" {
       apply_method = parameter.value["apply_method"]
     }
   }
+  
+  tags = local.tags
 }
 
 

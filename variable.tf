@@ -42,3 +42,10 @@ variable "create_cluster_pg" {
   type        = bool
   default     = true
 }
+
+
+variable "additional_tags" {
+  description = "additional tags"
+  type        = map(string)
+  default     = {}
+}

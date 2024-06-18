@@ -67,6 +67,7 @@ module "xyz_db_pg_aurora-postgresql-15" {
   pg_info               = var.xyz_pg_info
   db_pg_parameters      = var.xyz_db_pg_parameters
   cluster_pg_parameters = var.xyz_cluster_pg_parameters
+  additional_tags       = var.additional_tags
 }
 
 
@@ -124,6 +125,14 @@ variable "xyz_cluster_pg_parameters" {
   }
 }
 
+
+// Additional tags to be added to all resources
+variable "additional_tags" {
+  type = map(string)
+  default = {
+    Environment = "PROD"
+  }
+}
 
 // PG OUTPUT
 output "xyz_db" {
