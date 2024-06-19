@@ -8,7 +8,7 @@ This module was only tested on aurora-postgresql family parameter group.
  * to only create a DB Cluster Parameter Group, set the "create_db_pg" variable to false.
  * if no value is provided for pg_info["description"], the Parameter Group description will be generated automatically.
  * parameter "apply_method" default value is "pending-reboot". 
- * the end result of a Cluster Parameter Group is the merger of db_pg_parameters and cluster_pg_parameters values
+
 
 
 ## Requirements
