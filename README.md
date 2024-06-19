@@ -62,7 +62,7 @@ No modules.
 #################################
 module "xyz_db_pg_aurora-postgresql-15" {
   source  = "mkomlaetou/rds-parameter-group/aws"
-  version = "1.0.0"
+  version = "1.0.1"
   
   pg_info               = var.xyz_pg_info
   db_pg_parameters      = var.xyz_db_pg_parameters
