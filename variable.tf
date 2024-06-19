@@ -1,5 +1,3 @@
-
-
 variable "pg_info" {
   description = "paramager group name and family"
   type = object({
@@ -11,7 +9,7 @@ variable "pg_info" {
 }
 
 
-variable "db_pg_parameters" {
+variable "instance_pg_parameters" {
   description = "parameters of db parameter group"
   type = map(object({
     name         = optional(string, "")
@@ -33,7 +31,7 @@ variable "cluster_pg_parameters" {
 }
 
 
-variable "create_db_pg" {
+variable "create_instance_pg" {
   description = "required when creating db parameter group"
   type        = bool
   default     = true
@@ -43,4 +41,11 @@ variable "create_cluster_pg" {
   description = "requred when creating cluster parameter group"
   type        = bool
   default     = true
+}
+
+
+variable "additional_tags" {
+  description = "additional tags"
+  type        = map(string)
+  default     = {}
 }
